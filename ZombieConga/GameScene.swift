@@ -13,7 +13,9 @@ class GameScene: SKScene {
     
     var firstZombie: SKSpriteNode?
     var lastUpdateTime: NSTimeInterval = 0
-    var dt : NSTimeInterval = 0
+    var updateInterval : NSTimeInterval = 0
+    var zombieMovePointsPerSec: CGFloat = 480.0
+    var velocity = CGPoint.zero
     
     
     // MARK: - SKScene
@@ -26,21 +28,17 @@ class GameScene: SKScene {
     override func update(currentTime: NSTimeInterval) {
         
         if let zombie = firstZombie {
-            
-            zombie.position = CGPoint(x: zombie.position.x + 8.0, y: zombie.position.y)
+
+            let v = CGPoint(x: zombieMovePointsPerSec, y: 0)
+            moveSprite(zombie, byVelocity: v)
         }
-        
-        if lastUpdateTime > 0 {
-            
-            dt = currentTime - lastUpdateTime
-            
-        } else {
-            
-            dt = 0
-        }
+
+        updateInterval = lastUpdateTime > 0
+            ? currentTime - lastUpdateTime
+            : 0
         
         lastUpdateTime = currentTime
-        print("\(dt*1000) milliseconds since last update")
+        print("\(updateInterval*1000) milliseconds since last update")
     }
     
     // MARK: - GameScene
@@ -62,5 +60,18 @@ class GameScene: SKScene {
         addChild(zombie)
         
         return zombie
+    }
+    
+    func moveSprite(sprite: SKSpriteNode, byVelocity velocity: CGPoint) {
+        
+        let interval = CGFloat(updateInterval)
+        let ax = velocity.x * interval
+        let ay = velocity.y * interval
+        let amountToMove = CGPoint(x: ax, y: ay)
+        print("Amount to move: \(amountToMove)")
+
+        let px = sprite.position.x + amountToMove.x
+        let py = sprite.position.y + amountToMove.y
+        sprite.position = CGPoint(x: px, y: py)
     }
 }
