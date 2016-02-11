@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9BC000141C6C682600D715F5 /* MoveNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC000131C6C682600D715F5 /* MoveNode.swift */; };
 		9BC2A2111C6A82200048CF4B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC2A2101C6A82200048CF4B /* AppDelegate.swift */; };
 		9BC2A2151C6A82200048CF4B /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC2A2141C6A82200048CF4B /* GameScene.swift */; };
 		9BC2A2171C6A82200048CF4B /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC2A2161C6A82200048CF4B /* GameViewController.swift */; };
@@ -35,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9BC000131C6C682600D715F5 /* MoveNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoveNode.swift; sourceTree = "<group>"; };
 		9BC2A20D1C6A821F0048CF4B /* ZombieConga.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZombieConga.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BC2A2101C6A82200048CF4B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9BC2A2141C6A82200048CF4B /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 				9BC2A21B1C6A82200048CF4B /* Assets.xcassets */,
 				9BC2A21D1C6A82200048CF4B /* LaunchScreen.storyboard */,
 				9BC2A2201C6A82200048CF4B /* Info.plist */,
+				9BC000131C6C682600D715F5 /* MoveNode.swift */,
 			);
 			path = ZombieConga;
 			sourceTree = "<group>";
@@ -261,6 +264,7 @@
 			files = (
 				9BC2A2151C6A82200048CF4B /* GameScene.swift in Sources */,
 				9BC2A2171C6A82200048CF4B /* GameViewController.swift in Sources */,
+				9BC000141C6C682600D715F5 /* MoveNode.swift in Sources */,
 				9BC2A2111C6A82200048CF4B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -490,6 +494,7 @@
 				9BC2A23B1C6A82200048CF4B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9BC2A23C1C6A82200048CF4B /* Build configuration list for PBXNativeTarget "ZombieCongaTests" */ = {
 			isa = XCConfigurationList;
@@ -498,6 +503,7 @@
 				9BC2A23E1C6A82200048CF4B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9BC2A23F1C6A82200048CF4B /* Build configuration list for PBXNativeTarget "ZombieCongaUITests" */ = {
 			isa = XCConfigurationList;
@@ -506,6 +512,7 @@
 				9BC2A2411C6A82200048CF4B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -7,30 +7,35 @@
 //
 
 import XCTest
+import SpriteKit
 @testable import ZombieConga
 
 class ZombieCongaTests: XCTestCase {
     
-    override func setUp() {
-        super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    func testMoveToView() {
+        
+        let frame = CGRect(x: 0.0, y: 0.0, width: 2048.0, height: 1536.0)
+        let scene = GameScene(size: frame.size)
+        let view = SKView(frame: frame)
+        view.presentScene(scene)
+        XCTAssert(scene.children.count == 2)
     }
     
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
+    func testReMoveToView() {
+        
+        let frame = CGRect(x: 0.0, y: 0.0, width: 2048.0, height: 1536.0)
+        let scene = GameScene(size: frame.size)
+        let view = SKView(frame: frame)
+        view.presentScene(scene)
+        view.presentScene(nil)
+        view.presentScene(scene)
+        XCTAssert(scene.children.count == 2)
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testInit() {
+        
+        let frame = CGRect(x: 0.0, y: 0.0, width: 2048.0, height: 1536.0)
+        let scene = GameScene(size: frame.size)
+        XCTAssert(scene.children.count == 2)
     }
-    
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measureBlock {
-            // Put the code you want to measure the time of here.
-        }
-    }
-    
 }
