@@ -11,6 +11,7 @@ import SpriteKit
 
 class GameScene: SKScene {
     
+    let playableArea: CGRect
     let background: SKSpriteNode
     let zombie: MoveNode
     var lastUpdateTime: NSTimeInterval = 0
@@ -20,19 +21,30 @@ class GameScene: SKScene {
     // MARK: - SKScene
     override init(size: CGSize) {
 
+        playableArea = {
+           
+            let maxAspectRatio: CGFloat = 16.0 / 9.0
+            let playableHeight = size.width / maxAspectRatio
+            let playableMargin = (size.height - playableHeight) / 2.0
+            let rect = CGRect(x: 0, y: playableMargin, width: size.width, height: playableHeight)
+            
+            return rect
+        }()
+        
         background = SKSpriteNode(imageNamed: "background1")
         background.anchorPoint = CGPoint.zero
         background.zPosition = -1
         
         zombie = MoveNode(imageNamed: "zombie1")
-        zombie.anchorPoint = CGPoint.zero
         zombie.position = CGPoint(x: 400, y: 400)
         
         super.init(size: size)
-
+        
         backgroundColor = SKColor.blackColor()
         addChild(background)
         addChild(zombie)
+        
+        debugDrawPlayableArea()
     }
     override func didMoveToView(view: SKView) {
         super.didMoveToView(view)
@@ -42,6 +54,7 @@ class GameScene: SKScene {
     override func update(currentTime: NSTimeInterval) {
         
         zombie.move(forInterval: updateInterval)
+        boundsCheck(zombie)
         
         updateInterval = lastUpdateTime > 0
             ? currentTime - lastUpdateTime
@@ -73,4 +86,54 @@ class GameScene: SKScene {
         let touchLocation = touch.locationInNode(self)
         zombie.setVelocity(towardPoint: touchLocation)
     }
+    
+    func boundsCheck(node: MoveNode) {
+        
+        let bottomLeft = CGPoint(x: 0.0, y: playableArea.minY)
+        let topRight = CGPoint(x: size.width, y: playableArea.maxY)
+        
+        if node.position.x <= bottomLeft.x {
+            
+            node.position.x = bottomLeft.x
+            node.velocity.x *= -1
+        }
+        
+        if node.position.x >= topRight.x {
+            
+            node.position.x = topRight.x
+            node.velocity.x *= -1
+        }
+        
+        if node.position.y <= bottomLeft.y {
+            
+            node.position.y = bottomLeft.y
+            node.velocity.y *= -1
+        }
+        
+        if node.position.y >= topRight.y {
+            
+            node.position.y = topRight.y
+            node.velocity.y *= -1
+        }
+    }
+    
+    func debugDrawPlayableArea() {
+        
+        let shape = SKShapeNode()
+        let path = CGPathCreateMutable()
+        
+        CGPathAddRect(path, nil, playableArea)
+        shape.path = path
+        shape.strokeColor = SKColor.redColor()
+        shape.lineWidth = 4.0
+        shape.zPosition = 100
+        addChild(shape)
+    }
 }
+
+
+
+
+
+
+
