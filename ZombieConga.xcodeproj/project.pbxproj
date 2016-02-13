@@ -104,11 +104,11 @@
 				9BC2A2101C6A82200048CF4B /* AppDelegate.swift */,
 				9BC2A2141C6A82200048CF4B /* GameScene.swift */,
 				9BC2A2161C6A82200048CF4B /* GameViewController.swift */,
+				9BC000131C6C682600D715F5 /* MoveNode.swift */,
 				9BC2A2181C6A82200048CF4B /* Main.storyboard */,
 				9BC2A21B1C6A82200048CF4B /* Assets.xcassets */,
 				9BC2A21D1C6A82200048CF4B /* LaunchScreen.storyboard */,
 				9BC2A2201C6A82200048CF4B /* Info.plist */,
-				9BC000131C6C682600D715F5 /* MoveNode.swift */,
 			);
 			path = ZombieConga;
 			sourceTree = "<group>";

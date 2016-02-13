@@ -42,4 +42,10 @@ class MoveNode : SKSpriteNode {
         let vy = direction.y * movePointsPerSecond
         velocity = CGPoint(x: vx, y: vy)
     }
+    
+    func rotate(direction: CGPoint) {
+        
+        zRotation = CGFloat(
+        atan2(Double(direction.y), Double(direction.x)))
+    }
 }

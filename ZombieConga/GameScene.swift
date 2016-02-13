@@ -31,12 +31,26 @@ class GameScene: SKScene {
             return rect
         }()
         
-        background = SKSpriteNode(imageNamed: "background1")
-        background.anchorPoint = CGPoint.zero
-        background.zPosition = -1
+        background = {
+            
+            let name = "background1"
+            let node = SKSpriteNode(imageNamed: name)
+            node.name = name
+            node.anchorPoint = CGPoint.zero
+            node.zPosition = -1
+            
+            return node
+        }()
         
-        zombie = MoveNode(imageNamed: "zombie1")
-        zombie.position = CGPoint(x: 400, y: 400)
+        zombie = {
+            
+            let name = "zombie1"
+            let node = MoveNode(imageNamed: name)
+            node.name = name
+            node.position = CGPoint(x: 400, y: 400)
+            
+            return node
+        }()
         
         super.init(size: size)
         
@@ -55,6 +69,7 @@ class GameScene: SKScene {
         
         zombie.move(forInterval: updateInterval)
         boundsCheck(zombie)
+        zombie.rotate(zombie.velocity)
         
         updateInterval = lastUpdateTime > 0
             ? currentTime - lastUpdateTime
