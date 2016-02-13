@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9B698FCE1C6EE33900339306 /* CGPoint+custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B698FCD1C6EE33900339306 /* CGPoint+custom.swift */; };
+		9B698FD01C6EE39F00339306 /* CGPointTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B698FCF1C6EE39F00339306 /* CGPointTests.swift */; };
 		9BC000141C6C682600D715F5 /* MoveNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC000131C6C682600D715F5 /* MoveNode.swift */; };
 		9BC2A2111C6A82200048CF4B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC2A2101C6A82200048CF4B /* AppDelegate.swift */; };
 		9BC2A2151C6A82200048CF4B /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC2A2141C6A82200048CF4B /* GameScene.swift */; };
@@ -36,6 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9B698FCD1C6EE33900339306 /* CGPoint+custom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGPoint+custom.swift"; sourceTree = "<group>"; };
+		9B698FCF1C6EE39F00339306 /* CGPointTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGPointTests.swift; sourceTree = "<group>"; };
 		9BC000131C6C682600D715F5 /* MoveNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoveNode.swift; sourceTree = "<group>"; };
 		9BC2A20D1C6A821F0048CF4B /* ZombieConga.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZombieConga.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BC2A2101C6A82200048CF4B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -78,6 +82,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9B698FD11C6EE45F00339306 /* resources */ = {
+			isa = PBXGroup;
+			children = (
+				9BC2A21B1C6A82200048CF4B /* Assets.xcassets */,
+				9BC2A21D1C6A82200048CF4B /* LaunchScreen.storyboard */,
+				9BC2A2201C6A82200048CF4B /* Info.plist */,
+			);
+			name = resources;
+			sourceTree = "<group>";
+		};
+		9B698FD21C6EE46D00339306 /* resources */ = {
+			isa = PBXGroup;
+			children = (
+				9BC2A22B1C6A82200048CF4B /* Info.plist */,
+			);
+			name = resources;
+			sourceTree = "<group>";
+		};
 		9BC2A2041C6A821F0048CF4B = {
 			isa = PBXGroup;
 			children = (
@@ -101,14 +123,13 @@
 		9BC2A20F1C6A821F0048CF4B /* ZombieConga */ = {
 			isa = PBXGroup;
 			children = (
+				9B698FD11C6EE45F00339306 /* resources */,
 				9BC2A2101C6A82200048CF4B /* AppDelegate.swift */,
 				9BC2A2141C6A82200048CF4B /* GameScene.swift */,
 				9BC2A2161C6A82200048CF4B /* GameViewController.swift */,
 				9BC000131C6C682600D715F5 /* MoveNode.swift */,
 				9BC2A2181C6A82200048CF4B /* Main.storyboard */,
-				9BC2A21B1C6A82200048CF4B /* Assets.xcassets */,
-				9BC2A21D1C6A82200048CF4B /* LaunchScreen.storyboard */,
-				9BC2A2201C6A82200048CF4B /* Info.plist */,
+				9B698FCD1C6EE33900339306 /* CGPoint+custom.swift */,
 			);
 			path = ZombieConga;
 			sourceTree = "<group>";
@@ -116,8 +137,9 @@
 		9BC2A2281C6A82200048CF4B /* ZombieCongaTests */ = {
 			isa = PBXGroup;
 			children = (
+				9B698FD21C6EE46D00339306 /* resources */,
 				9BC2A2291C6A82200048CF4B /* ZombieCongaTests.swift */,
-				9BC2A22B1C6A82200048CF4B /* Info.plist */,
+				9B698FCF1C6EE39F00339306 /* CGPointTests.swift */,
 			);
 			path = ZombieCongaTests;
 			sourceTree = "<group>";
@@ -265,6 +287,7 @@
 				9BC2A2151C6A82200048CF4B /* GameScene.swift in Sources */,
 				9BC2A2171C6A82200048CF4B /* GameViewController.swift in Sources */,
 				9BC000141C6C682600D715F5 /* MoveNode.swift in Sources */,
+				9B698FCE1C6EE33900339306 /* CGPoint+custom.swift in Sources */,
 				9BC2A2111C6A82200048CF4B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -273,6 +296,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B698FD01C6EE39F00339306 /* CGPointTests.swift in Sources */,
 				9BC2A22A1C6A82200048CF4B /* ZombieCongaTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
