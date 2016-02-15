@@ -48,7 +48,7 @@ class GameScene: SKScene {
             let node = MoveNode(imageNamed: name)
             node.name = name
             node.position = CGPoint(x: 400, y: 400)
-            
+
             return node
         }()
         
@@ -69,7 +69,6 @@ class GameScene: SKScene {
         
         zombie.move(forInterval: updateInterval)
         boundsCheck(zombie)
-        zombie.rotate(zombie.velocity)
         
         updateInterval = lastUpdateTime > 0
             ? currentTime - lastUpdateTime
@@ -99,7 +98,7 @@ class GameScene: SKScene {
         
         guard let touch = touches.first else { return }
         let touchLocation = touch.locationInNode(self)
-        zombie.setVelocity(towardPoint: touchLocation)
+        zombie.setVelocity(towardGoal: touchLocation)
     }
     
     func boundsCheck(node: MoveNode) {
