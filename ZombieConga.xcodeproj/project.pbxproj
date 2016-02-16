@@ -18,6 +18,8 @@
 		9BC2A21F1C6A82200048CF4B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BC2A21D1C6A82200048CF4B /* LaunchScreen.storyboard */; };
 		9BC2A22A1C6A82200048CF4B /* ZombieCongaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC2A2291C6A82200048CF4B /* ZombieCongaTests.swift */; };
 		9BC2A2351C6A82200048CF4B /* ZombieCongaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC2A2341C6A82200048CF4B /* ZombieCongaUITests.swift */; };
+		9BD5411B1C72D33D00A50213 /* CGFloat+custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD5411A1C72D33D00A50213 /* CGFloat+custom.swift */; };
+		9BD5411D1C72D3C800A50213 /* CGFloatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD5411C1C72D3C800A50213 /* CGFloatTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +57,8 @@
 		9BC2A2301C6A82200048CF4B /* ZombieCongaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZombieCongaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BC2A2341C6A82200048CF4B /* ZombieCongaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZombieCongaUITests.swift; sourceTree = "<group>"; };
 		9BC2A2361C6A82200048CF4B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9BD5411A1C72D33D00A50213 /* CGFloat+custom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGFloat+custom.swift"; sourceTree = "<group>"; };
+		9BD5411C1C72D3C800A50213 /* CGFloatTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGFloatTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +134,7 @@
 				9BC000131C6C682600D715F5 /* MoveNode.swift */,
 				9BC2A2181C6A82200048CF4B /* Main.storyboard */,
 				9B698FCD1C6EE33900339306 /* CGPoint+custom.swift */,
+				9BD5411A1C72D33D00A50213 /* CGFloat+custom.swift */,
 			);
 			path = ZombieConga;
 			sourceTree = "<group>";
@@ -140,6 +145,7 @@
 				9B698FD21C6EE46D00339306 /* resources */,
 				9BC2A2291C6A82200048CF4B /* ZombieCongaTests.swift */,
 				9B698FCF1C6EE39F00339306 /* CGPointTests.swift */,
+				9BD5411C1C72D3C800A50213 /* CGFloatTests.swift */,
 			);
 			path = ZombieCongaTests;
 			sourceTree = "<group>";
@@ -287,6 +293,7 @@
 				9BC2A2151C6A82200048CF4B /* GameScene.swift in Sources */,
 				9BC2A2171C6A82200048CF4B /* GameViewController.swift in Sources */,
 				9BC000141C6C682600D715F5 /* MoveNode.swift in Sources */,
+				9BD5411B1C72D33D00A50213 /* CGFloat+custom.swift in Sources */,
 				9B698FCE1C6EE33900339306 /* CGPoint+custom.swift in Sources */,
 				9BC2A2111C6A82200048CF4B /* AppDelegate.swift in Sources */,
 			);
@@ -297,6 +304,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9B698FD01C6EE39F00339306 /* CGPointTests.swift in Sources */,
+				9BD5411D1C72D3C800A50213 /* CGFloatTests.swift in Sources */,
 				9BC2A22A1C6A82200048CF4B /* ZombieCongaTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

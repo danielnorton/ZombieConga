@@ -12,7 +12,8 @@ import SpriteKit
 
 class MoveNode : SKSpriteNode {
     
-    var movePointsPerSecond: CGFloat = 480.0
+    let zombieRotateRadiansPerSec:CGFloat = 4.0 * π
+    let movePointsPerSecond: CGFloat = 480.0
     var velocity = CGPoint.zero
     var goal: CGPoint?
     
@@ -20,7 +21,7 @@ class MoveNode : SKSpriteNode {
 
         guard velocity != CGPoint.zero else { return }
 
-        rotate(velocity)
+        rotate(velocity, forInterval: interval)
         let amountToMove = velocity * CGFloat(interval)
         position += amountToMove
         
@@ -44,9 +45,17 @@ class MoveNode : SKSpriteNode {
         velocity  = direction * movePointsPerSecond
     }
     
-    func rotate(direction: CGPoint) {
+    func rotate(direction: CGPoint, forInterval interval: NSTimeInterval) {
         
-        zRotation = CGFloat(
-        atan2(Double(direction.y), Double(direction.x)))
+        let goal = CGFloat(atan2(Double(direction.y), Double(direction.x)))
+        let shortest = zRotation.shortestAngleTo(radian: goal)
+        let amountToMove = shortest * (CGFloat(interval) * zombieRotateRadiansPerSec)
+        
+        zRotation += amountToMove
     }
 }
+
+
+
+
+
